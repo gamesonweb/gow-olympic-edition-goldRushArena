@@ -1,70 +1,49 @@
-const path = require("path");
-const fs = require("fs");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
-const appDirectory = fs.realpathSync(process.cwd());
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(appDirectory, "src/index.js"),
+    entry: './src/index.js',
     output: {
-        filename: "js/babylonBundle.js",
-        path: path.resolve("./dist/"),
-    },
-    resolve: {
-        extensions: [".ts", ".js"],
-        fallback: {
-            fs: false,
-            path: false, 
-        },
+        filename: 'js/[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/',
     },
     module: {
         rules: [
             {
-                test: /\.m?js/,
-            },
-            {
-                test: /\.(js|mjs|jsx|ts|tsx)$/,
-                loader: "source-map-loader",
-                enforce: "pre",
-            },
-            {
-                test: /\.tsx?$/,
-                loader: "ts-loader",               
-            },
-            {
-                test: /\.(glsl|vs|fs)$/,
-                loader: "ts-shader-loader",
+                test: /\.js$/,
                 exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                },
             },
             {
-                test: /\.(mp3|wav|ogg|mp4|glb|hdr)$/i,
-                use: [
-                    {
-                        loader: "file-loader",
-                    },
-                ],
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'images/[hash][ext][query]'
+                },
             },
             {
-                test: /\.(png|jpg|gif|env|gltf|stl|dds|json)$/i,
-                use: [
-                    {
-                        loader: "url-loader",
-                        options: {
-                            limit: 4096,
-                        },
-                    },
-                ],
-                type: 'javascript/auto'
+                test: /\.(glb|gltf)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'models/[hash][ext][query]'
+                },
+            },
+            {
+                test: /\.(mp3|wav)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'sounds/[hash][ext][query]'
+                },
             },
         ],
     },
     plugins: [
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            inject: true,
-            favicon: "public/favicon.ico",
-            template: path.resolve(appDirectory, "public/index.html"),
+            template: './public/index.html',
+            favicon: './public/favicon.ico',
         }),
     ],
 };
