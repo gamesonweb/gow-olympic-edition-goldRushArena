@@ -31,13 +31,6 @@ Triomphez dans cette épreuve épique pour restaurer la paix et l'ordre dans ce 
 
 ---
 
-## Mode de jeu 
-
-- **Clavier Azerty** : 'Q' déplacement à gauche 'D' déplacement à droite.
-- **Clavier Qwerty** : 'A' déplacement à gauche 'D' déplacement à droite.
-
----
-
 ## Le Personnage
 
 - **Caractéristiques** : Un jeune footballeur agile et déterminé.
@@ -46,9 +39,22 @@ Triomphez dans cette épreuve épique pour restaurer la paix et l'ordre dans ce 
 ---
 
 ## Difficultés rencontrées
+
+- **Problème de chargement de l'image du menu** : Nous avons observé un problème où l'image du menu du jeu ne se charge pas correctement lors de l'accès au jeu via notre serveur d'hébergement distant. En revanche, ce problème ne se produit pas lorsque le jeu est exécuté localement.
 - **Gestion des collisions** : Nous avons rencontré des difficultés techniques dans la gestion des collisions entre le joueur et les adversaires, ce qui a nécessité plusieurs ajustements pour assurer une interaction fluide et précise.
 - **Architecture logicielle** : Initialement, nous avons tenté d'utiliser une architecture avec des classes abstraites pour éviter la duplication de code, mais des défis techniques nous ont poussés à opter pour des classes séparées.
 - **Première expérience** : Pour plusieurs membres de l'équipe, c'était le premier projet de développement de jeu, ce qui a introduit des défis supplémentaires dans l'apprentissage et l'application des technologies de jeu.
+
+---
+## Lien utiles 
+- **Vidéo Gameplay**: [Réalisés avec Blender, modèles de déchets et obstacles provenant de ressources libres.](https://www.youtube.com/watch?v=bwzCqOSkqJU&ab_channel=touriaGow
+)
+- **Pour jouer** : https://gamesonweb.github.io/gow-olympic-edition-goldRushArena/
+
+---
+## Mode de jeu 
+- **Clavier Azerty** : 'Q' déplacement à gauche 'D' déplacement à droite.
+- **Clavier Qwerty** : 'A' déplacement à gauche 'D' déplacement à droite.
 
 ---
 
@@ -57,6 +63,7 @@ Triomphez dans cette épreuve épique pour restaurer la paix et l'ordre dans ce 
 - **Modèles 3D** : Réalisés avec Blender, modèles de déchets et obstacles provenant de ressources libres.
 - **Musiques** : Libres de droit.
 - **Code** : Basé sur le cours de Olivier Arguimbau et la documentation Babylon.js.
+- **Modèles 3d** : sketchfab.com
 
 ## Auteurs
 
