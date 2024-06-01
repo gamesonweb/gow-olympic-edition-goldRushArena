@@ -28,6 +28,9 @@ Triomphez dans cette épreuve épique pour restaurer la paix et l'ordre dans ce 
 - **Déplacement latéral** : Déplacement horizontal pour éviter les adversaires.
 - **Illusion de Mouvement** : Le personnage reste statique tandis que les obstacles descendent.
 - **Obstacles Dynamiques** : Les adversaires descendent à des vitesses variables.
+- **Score** Le score du joueur est affiché en continu sur le côté gauche de l'écran. Il augmente à chaque fois que le joueur réussit à esquiver un obstacle.
+- **Timer** Un timer est affiché sur le côté droit de l'écran, indiquant le temps écoulé depuis le début de la partie. Le timer augmente progressivement et est utilisé pour mesurer la durée de la partie.
+
 
 ---
 
@@ -47,7 +50,7 @@ Triomphez dans cette épreuve épique pour restaurer la paix et l'ordre dans ce 
 
 ---
 ## Lien utiles 
-- **Vidéo Gameplay**: [Réalisés avec Blender, modèles de déchets et obstacles provenant de ressources libres.](https://www.youtube.com/watch?v=bwzCqOSkqJU&ab_channel=touriaGow
+- **Vidéo Gameplay**: https://www.youtube.com/watch?v=bwzCqOSkqJU&ab_channel=touriaGow
 )
 - **Pour jouer** : https://gamesonweb.github.io/gow-olympic-edition-goldRushArena/
 
