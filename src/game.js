@@ -9,7 +9,7 @@ let NB_OBSTACLES = 5;
 const SPAWN_POS_Z = (TRACK_DEPTH * NB_TRACKS);
 let SPEED_Z = 20;
 const SPEED_X = 10;
-const MAX_SPEED_Z = 110;
+const MAX_SPEED_Z = 120;
 
 import meshUrl from "../assets/models/player.glb";
 import grassUrl from "../assets/textures/grass.jpg";
