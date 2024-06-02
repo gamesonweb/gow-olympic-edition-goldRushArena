@@ -68,7 +68,7 @@ Dans un monde où l'esprit sportif transcende les frontières, le Stade Olympiqu
 ---
 
 ## <a name="liens-utiles"></a>Liens utiles 
-- **Vidéo Gameplay**: [Cliquez ici pour voir la vidéo](https://www.youtube.com/watch?v=bwzCqOSkqJU&ab_channel=touriaGow)
+- **Vidéo Gameplay**: [Cliquez ici pour voir la vidéo](https://www.youtube.com/watch?v=w9DJ4oeCvq0&feature=youtu.be)
 - **Pour jouer** : [Cliquez ici pour jouer](https://gamesonweb.github.io/gow-olympic-edition-goldRushArena/)
 
 ---
