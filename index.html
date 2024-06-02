@@ -7,8 +7,12 @@
       padding: 0;
     }
 
+    #gui {
+      display: block;
+    }
+
     #responsiveimg {
-      
+      display: block;
       position: fixed;
       top: 0;
       left: 0;
@@ -26,8 +30,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      display: flex; 
-      justify-content: center; 
+      display: flex;
+      justify-content: center;
       align-items: center;
       background: rgba(0, 0, 0, 0.5);
     }
@@ -111,4 +115,23 @@
       height: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
       transition: all 0.3s ease;
-    }</style><link rel="icon" href="favicon.ico"><script defer="defer" src="js/babylonBundle.js"></script></head><body><div id="score">0</div><canvas id="renderCanvas" touch-action="none"></canvas><div id="fps">0</div><div id="gui"><img id="responsiveimg" src="./images/menu.jpg"><div id="menu"><div id="buttonContainer"><button id="playButton" class="menuButton">PLAY</button></div></div></div></body></html>
+    }
+
+    .scoreDisplay {
+      font-family: 'Bebas Neue', sans-serif;
+      color: white;
+      font-size: 40px;
+      margin-bottom: 20px;
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 100;
+    }</style><link rel="icon" href="favicon.ico"><script defer="defer" src="js/babylonBundle.js"></script></head><body><div id="score">0</div><canvas id="renderCanvas" touch-action="none"></canvas><div id="fps">0</div><div id="gui"><img id="responsiveimg" src="https://www.campingfrance.com/asset/cms/165308/config/116548/football-jo-paris-2024.jpg"><div id="menu"><div id="buttonContainer"><button id="playButton" class="menuButton">PLAY</button></div></div></div><div id="gameOverScreen" class="scoreDisplay"><h1>Game Over</h1><p id="finalScore">Score: 0</p><button id="restartButton" class="menuButton">Restart</button></div></body></html>
