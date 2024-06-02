@@ -4,7 +4,6 @@ import { Inspector } from "@babylonjs/inspector";
 const TRACK_WIDTH = 8;
 const TRACK_HEIGHT = 0.1;
 const TRACK_DEPTH = 3;
-const BORDER_HEIGHT = 0.5;
 const NB_TRACKS = 50;
 let NB_OBSTACLES = 5;
 const SPAWN_POS_Z = (TRACK_DEPTH * NB_TRACKS);
@@ -99,7 +98,7 @@ class Game {
 
     endGame() {
         this.engine.stopRenderLoop(); 
-        document.getElementById('finalScore').innerText = `Score: ${this.score}`;
+        document.getElementById('finalScore').innerText = `Score: ${this.score}`;  
         document.getElementById('gameOverScreen').style.display = 'flex';
         this.playMusic.stop();
         this.menuMusic.stop();
