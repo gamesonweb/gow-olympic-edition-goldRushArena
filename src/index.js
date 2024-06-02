@@ -11,7 +11,7 @@ window.onload = () => {
 
   // Get the canvas element
   canvas = document.getElementById("renderCanvas");
-  
+
   // Create the Babylon.js engine
   engine = new Engine(canvas, true);
 
@@ -41,4 +41,13 @@ window.onload = () => {
     // Set focus to the canvas
     canvas.focus();
   });
+
+  const restartButton = document.getElementById('restartButton');
+  const gameOverScreen = document.getElementById('gameOverScreen');
+  restartButton.addEventListener('click', function () {
+    gameOverScreen.style.display = 'none';
+    window.location.reload();
+  });
+
+
 }

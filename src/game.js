@@ -10,16 +10,17 @@ let NB_OBSTACLES = 5;
 const SPAWN_POS_Z = (TRACK_DEPTH * NB_TRACKS);
 let SPEED_Z = 20;
 const SPEED_X = 10;
-const MAX_SPEED_Z = 100;
+const MAX_SPEED_Z = 110;
 
 import meshUrl from "../assets/models/player.glb";
 import grassUrl from "../assets/textures/grass.jpg";
 import obstacle1Url from "../assets/models/obs.glb";
 import ballUrl from "../assets/models/football__soccer_ball.glb";
 import stadiumUrl from "../assets/models/stadiumV2.glb";
-import menuMusicUrl from "../assets/sounds/menu.mp3";
-import gameplayMusicUrl from "../assets/sounds/gameplay.mp3";
-import hitSoundUrl from "../assets/sounds/test.wav";
+import menuMusicUrl from "../assets/sounds/menuMusic.mp3";
+import playMusicUrl from "../assets/sounds/playMusic.wav";
+import endingMusicUrl from "../assets/sounds/endingMusic.mp3";
+
 
 
 
@@ -62,7 +63,9 @@ class Game {
                 }
             });
             this.engine.hideLoadingUI();
-            //this.menuMusic.play();
+            this.menuMusic.play();
+            this.playMusic.stop();
+            this.endingMusic.stop();
             //Inspector.Show(this.scene, {});
         });
 
@@ -73,8 +76,9 @@ class Game {
         this.startTimer = 0;
         this.elapsedTime = 0;
         this.score = 0;
-        //this.menuMusic.stop();
-        //this.gameplayMusic.play();
+        this.menuMusic.stop();
+        this.playMusic.play();
+        this.endingMusic.stop();
         this.engine.runRenderLoop(() => {
 
             let delta = this.engine.getDeltaTime() / 1000.0;
@@ -91,6 +95,15 @@ class Game {
             }
 
         });
+    }
+
+    endGame() {
+        this.engine.stopRenderLoop(); 
+        document.getElementById('finalScore').innerText = `Score: ${this.score}`;
+        document.getElementById('gameOverScreen').style.display = 'flex';
+        this.playMusic.stop();
+        this.menuMusic.stop();
+        this.endingMusic.play();
     }
 
     update(delta) {
@@ -120,8 +133,7 @@ class Game {
                     obstacle.position.set(x, 0.5, z);
                 } else {
                     if (this.playerBox.intersectsMesh(obstacle, false)) {
-                        this.aie.play();
-                        //window.location.reload();
+                        this.endGame();
                     }
                 }
             }
@@ -259,9 +271,9 @@ class Game {
         }
         obstacleModele.setEnabled(false);
         obstacleModele.dispose;
-        this.menuMusic = new Sound("menuMusic", menuMusicUrl, this.scene, null, { loop: true, autoplay: false, volume: 0.3 });
-        this.gameplayMusic = new Sound("gameplayMusic", gameplayMusicUrl, this.scene, null, { loop: true, autoplay: false, volume: 0.3 });
-        this.aie = new Sound("aie", hitSoundUrl, this.scene);
+        this.menuMusic = new Sound("menuMusic", menuMusicUrl, this.scene, undefined, { loop: true, autoplay: true, volume: 0.3 });
+        this.playMusic = new Sound("playMusic", playMusicUrl, this.scene, undefined, { loop: true, autoplay: true, volume: 0.4 });
+        this.endingMusic = new Sound("menuMusic", endingMusicUrl, this.scene, null, { volume: 0.3 });
     }
 
 
