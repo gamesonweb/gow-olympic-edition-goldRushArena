@@ -17,8 +17,9 @@ import grassUrl from "../assets/textures/grass.jpg";
 import obstacle1Url from "../assets/models/obs.glb";
 import ballUrl from "../assets/models/football__soccer_ball.glb";
 import stadiumUrl from "../assets/models/stadiumV2.glb";
-import menuMusicUrl from "../assets/sounds/menu.mp3";  
+import menuMusicUrl from "../assets/sounds/menu.mp3";
 import gameplayMusicUrl from "../assets/sounds/gameplay.mp3";
+import hitSoundUrl from "../assets/sounds/test.wav";
 
 
 
@@ -61,7 +62,7 @@ class Game {
                 }
             });
             this.engine.hideLoadingUI();
-            this.menuMusic.play();
+            //this.menuMusic.play();
             //Inspector.Show(this.scene, {});
         });
 
@@ -72,8 +73,8 @@ class Game {
         this.startTimer = 0;
         this.elapsedTime = 0;
         this.score = 0;
-        this.menuMusic.stop();
-        this.gameplayMusic.play();
+        //this.menuMusic.stop();
+        //this.gameplayMusic.play();
         this.engine.runRenderLoop(() => {
 
             let delta = this.engine.getDeltaTime() / 1000.0;
@@ -116,13 +117,12 @@ class Game {
                 let x = Scalar.RandomRange(-TRACK_WIDTH / 2, TRACK_WIDTH / 2);
                 let z = Scalar.RandomRange(SPAWN_POS_Z - 15, SPAWN_POS_Z + 15);
                 obstacle.position.set(x, 0.5, z);
+            } 
+            else {
+                if (this.playerBox.intersectsMesh(obstacle, false)) {
+                    this.aie.play();
+                }
             }
-            if (this.player.intersectsMesh(obstacle, false)) {
-                //this.music.play();
-                //this.engine.stopRenderLoop();
-                //window.location.href = "gameover.html";
-            }
-
         }
 
 
@@ -190,6 +190,12 @@ class Game {
         res.meshes[0].position.set(0, TRACK_HEIGHT / 2, 6);
         res.meshes[0].rotation = new Vector3(0, 0, 0);
 
+        this.playerBox = MeshBuilder.CreateCapsule("playerCap", { width: 0.4, height: 1.7 });
+        this.playerBox.position.y = 0.85;
+        this.playerBox.parent = this.player;
+        this.playerBox.checkCollisions = true;
+        this.playerBox.collisionGroup = 1;
+        this.playerBox.visibility = 0;
 
         res = await SceneLoader.ImportMeshAsync("", "", ballUrl, this.scene);
         this.ball = res.meshes[0];
@@ -217,10 +223,10 @@ class Game {
 
         res = await SceneLoader.ImportMeshAsync("", "", stadiumUrl, this.scene);
         res.meshes[0].name = "stadium";
-        res.meshes[0].position = new Vector3(14.32, 19.23, 43.27);       
+        res.meshes[0].position = new Vector3(14.32, 19.23, 43.27);
         res.meshes[0].rotation = new Vector3(0, 0, 0);
         res.meshes[0].scaling = new Vector3(2, 2, 2);
-        
+
 
 
         res = await SceneLoader.ImportMeshAsync("", "", obstacle1Url, this.scene);
@@ -229,8 +235,6 @@ class Game {
         for (let i = 0; i < NB_OBSTACLES; i++) {
             let obstacle = obstacleModele.clone("");
             obstacle.scaling = new Vector3(1, 1, 1);
-            obstacle.checkCollisions = true;
-            obstacle.collisionGroup = 2;
 
             let x = Scalar.RandomRange(-TRACK_WIDTH / 2, TRACK_WIDTH / 2);
             let z = Scalar.RandomRange(SPAWN_POS_Z - 15, SPAWN_POS_Z + 15);
@@ -247,6 +251,9 @@ class Game {
                 max = Vector3.Maximize(max, meshMax);
             }
             obstacle.setBoundingInfo(new BoundingInfo(min, max));
+            obstacle.showBoundingBox = false;
+            obstacle.checkCollisions = true;
+            obstacle.collisionGroup = 2;
 
             this.obstacles.push(obstacle);
         }
@@ -254,10 +261,10 @@ class Game {
         obstacleModele.dispose;
         this.menuMusic = new Sound("menuMusic", menuMusicUrl, this.scene, null, { loop: true, autoplay: false, volume: 0.3 });
         this.gameplayMusic = new Sound("gameplayMusic", gameplayMusicUrl, this.scene, null, { loop: true, autoplay: false, volume: 0.3 });
-
+        this.aie = new Sound("aie", hitSoundUrl, this.scene);
     }
 
-   
+
 }
 
 export default Game;
