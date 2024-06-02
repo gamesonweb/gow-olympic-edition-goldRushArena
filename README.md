@@ -27,7 +27,6 @@
 
 - Ne pas se faire intercepter par les joueurs adverses.
 - Obtenir le meilleur score possible.
-- Obtenir le meilleur temps possible.
 
 ## <a name="scénario"></a>Scénario 
 
