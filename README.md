@@ -2,79 +2,97 @@
 
 ### Niveau : M1 Miage Toulouse
 
+## Sommaire
+1. [Description](#description)
+2. [Objectifs du Jeu](#objectifs-du-jeu)
+3. [Scénario](#scénario)
+4. [Mécaniques de Jeu](#mécaniques-de-jeu)
+5. [Le Personnage](#le-personnage)
+6. [Difficultés rencontrées](#difficultés-rencontrées)
+7. [Logiciels utilisés](#logiciels-utilisés)
+8. [Liens utiles](#liens-utiles)
+9. [Mode de jeu](#mode-de-jeu)
+10. [Ressources](#ressources)
+11. [Auteurs](#auteurs)
+
 ---
 
-## Description
+## <a name="description"></a>Description
 
-**GoldRushArena** est un jeu 3D immersif et éducatif développé dans le cadre du concours Games On Web 2024. Le jeu utilise BabylonJS pour créer une illusion de mouvement où le joueur incarne un footballeur talentueux esquivant des obstacles pour atteindre la ligne d'arrivée.
+**GoldRushArena** est un jeu 3D immersif et éducatif développé dans le cadre du concours Games On Web 2024. Le jeu utilise BabylonJS pour créer une illusion de mouvement où le joueur incarne un footballeur talentueux esquivant des obstacles.
 
 ---
 
-## Objectifs du Jeu
+## <a name="objectifs-du-jeu"></a>Objectifs du Jeu
 
-- Atteindre la ligne d'arrivée sans se faire intercepter par les joueurs adverses.
-- Obtenir le meilleur temps possible pour chaque niveau.
+- Ne pas se faire intercepter par les joueurs adverses.
+- Obtenir le meilleur score possible.
+- Obtenir le meilleur temps possible.
 
-## Scénario 
+## <a name="scénario"></a>Scénario 
 
-Dans un monde où l'esprit sportif transcende les frontières, le Stade Olympique de **GoldRushArena** devient le théâtre d'une compétition sans précédent. Cette arène virtuelle, conçue pour tester l'agilité et la stratégie des athlètes, se transforme en un défi où la course à la ligne d'arrivée est agrémentée par l'esquive d'obstacles dynamiques et de défis inattendus.
+Dans un monde où l'esprit sportif transcende les frontières, le Stade Olympique de **GoldRushArena** devient le théâtre d'une compétition sans précédent. Cette arène virtuelle, conçue pour tester l'agilité et la stratégie des athlètes, se transforme en un défi où la course est agrémentée par l'esquive d'obstacles dynamiques.
 
-Vous incarnez un prodige du football, un athlète de renommée mondiale confronté à un nouveau type de compétition olympique virtuelle. Doté d'une agilité exceptionnelle et d'un esprit compétitif aiguisé, votre mission est de naviguer sur un terrain stylisé et d'éviter les adversaires qui surgissent tout au long du parcours.
+---
 
-Triomphez dans cette épreuve épique pour restaurer la paix et l'ordre dans ce sanctuaire du sport et prouvez que l'esprit olympique peut surmonter tous les obstacles.
-
-## Mécaniques de Jeu
+## <a name="mécaniques-de-jeu"></a>Mécaniques de Jeu
 
 - **Déplacement latéral** : Déplacement horizontal pour éviter les adversaires.
 - **Illusion de Mouvement** : Le personnage reste statique tandis que les obstacles descendent.
 - **Obstacles Dynamiques** : Les adversaires descendent à des vitesses variables.
-- **Score** Le score du joueur est affiché en continu sur le côté gauche de l'écran. Il augmente à chaque fois que le joueur réussit à esquiver un obstacle.
-- **Timer** Un timer est affiché sur le côté droit de l'écran, indiquant le temps écoulé depuis le début de la partie. Le timer augmente progressivement et est utilisé pour mesurer la durée de la partie.
-
+- **Score** : Le score du joueur est affiché en continu sur le côté gauche de l'écran. Il augmente à chaque fois que le joueur réussit à esquiver un obstacle.
+- **Timer** : Un timer est affiché sur le côté droit de l'écran, indiquant le temps écoulé depuis le début de la partie.
 
 ---
 
-## Le Personnage
+## <a name="le-personnage"></a>Le Personnage
 
 - **Caractéristiques** : Un jeune footballeur agile et déterminé.
-- **Fonctionnalités** : Déplacement latéral, la personnalisation du personnage avec choix du nom et du pays.
+- **Fonctionnalités** : Déplacement latéral.
 
 ---
 
-## Difficultés rencontrées
-
-- **Problème de chargement de l'image du menu** : Nous avons observé un problème où l'image du menu du jeu ne se charge pas correctement lors de l'accès au jeu via notre serveur d'hébergement distant. En revanche, ce problème ne se produit pas lorsque le jeu est exécuté localement.
-- **Gestion des collisions** : Nous avons rencontré des difficultés techniques dans la gestion des collisions entre le joueur et les adversaires, ce qui a nécessité plusieurs ajustements pour assurer une interaction fluide et précise.
-- **Architecture logicielle** : Initialement, nous avons tenté d'utiliser une architecture avec des classes abstraites pour éviter la duplication de code, mais des défis techniques nous ont poussés à opter pour des classes séparées.
+## <a name="difficultés-rencontrées"></a>Difficultés rencontrées
+- **Gestion des collisions** : Des ajustements ont été nécessaires pour assurer une interaction fluide et précise entre le joueur et les adversaires.
+- **Architecture logicielle** : Des défis techniques ont exigé des changements d'architecture, passant de classes abstraites à des classes séparées.
 - **Première expérience** : Pour plusieurs membres de l'équipe, c'était le premier projet de développement de jeu, ce qui a introduit des défis supplémentaires dans l'apprentissage et l'application des technologies de jeu.
 
 ---
-## Lien utiles 
-- **Vidéo Gameplay**: https://www.youtube.com/watch?v=bwzCqOSkqJU&ab_channel=touriaGow
-)
-- **Pour jouer** : https://gamesonweb.github.io/gow-olympic-edition-goldRushArena/
+
+## <a name="logiciels-utilisés"></a>Logiciels utilisés
+
+- **BabylonJS** : Moteur de jeu principal pour les rendus 3D et les animations.
+- **Blender** : Utilisé pour la création des modèles 3D.
+- **Visual Studio Code** : Environnement de développement pour le codage du jeu.
 
 ---
-## Mode de jeu 
+
+## <a name="liens-utiles"></a>Liens utiles 
+- **Vidéo Gameplay**: [Cliquez ici pour voir la vidéo](https://www.youtube.com/watch?v=bwzCqOSkqJU&ab_channel=touriaGow)
+- **Pour jouer** : [Cliquez ici pour jouer](https://gamesonweb.github.io/gow-olympic-edition-goldRushArena/)
+
+---
+
+## <a name="mode-de-jeu"></a>Mode de jeu 
 - **Clavier Azerty** : 'Q' déplacement à gauche 'D' déplacement à droite.
 - **Clavier Qwerty** : 'A' déplacement à gauche 'D' déplacement à droite.
 
 ---
 
-## Ressources
+## <a name="ressources"></a>Ressources
 
 - **Modèles 3D** : Réalisés avec Blender, modèles de déchets et obstacles provenant de ressources libres.
 - **Musiques** : Libres de droit.
 - **Code** : Basé sur le cours de Olivier Arguimbau et la documentation Babylon.js.
-- **Modèles 3d** : sketchfab.com
+- **Modèles 3d** : [sketchfab.com](https://sketchfab.com)
 
-## Auteurs
+## <a name="auteurs"></a>Auteurs
 
 - Touria SAYAGH
 - Ossama ZARANI
 - Jad LEBCHIRI
 
-
 ---
 
-Nous espérons que vous apprécierez jouer à GoldRushArena et que vous pourrez en apprendre davantage sur les défis sportifs tout en vous amusant !
+Nous espérons que vous apprécierez jouer à **GoldRushArena** et que vous pourrez en apprendre davantage sur les défis sportifs tout en vous amusant !
+
