@@ -37,12 +37,12 @@ Dans un monde où l'esprit sportif transcende les frontières, le Stade Olympiqu
 
 ## <a name="mécaniques-de-jeu"></a>Mécaniques de Jeu
 
-- **Déplacement latéral** : Déplacement horizontal pour éviter les adversaires.
+- **Déplacement latéral** : Le joueur peut se déplacer horizontalement pour esquiver les adversaires.
 - **Illusion de Mouvement** : Le personnage reste statique tandis que les obstacles descendent.
-- **Obstacles Dynamiques** : Les adversaires descendent à des vitesses variables.
-- **Score** : Le score du joueur est affiché en continu sur le côté gauche de l'écran. Il augmente à chaque fois que le joueur réussit à esquiver un obstacle.
-- **Timer** : Un timer est affiché sur le côté droit de l'écran, indiquant le temps écoulé depuis le début de la partie.
-
+- **Obstacles Dynamiques** : Les obstacles, incarnés par les adversaires, descendent vers le joueur à des vitesses variables, intensifiant le challenge au fur et à mesure de la progression.
+- **Score** : Le score est affiché en continu sur le côté gauche de l'écran. Il fonctionne comme un timer qui s'accumule; plus le joueur survit longtemps, plus son score augmente.
+- **FPS (Frames Per Second) et vitesse de jeu** : La fréquence d'image par seconde assure une expérience fluide, tandis que la vitesse de jeu augmente progressivement. Les adversaires approchent à une vitesse accrue, ce qui élève la difficulté du jeu et teste les réflexes du joueur.
+- 
 ---
 
 ## <a name="le-personnage"></a>Le Personnage
