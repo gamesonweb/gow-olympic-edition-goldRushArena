@@ -109,22 +109,23 @@ class Game {
             }
         }
 
-        for (let i = 0; i < this.obstacles.length; i++) {
-            let obstacle = this.obstacles[i];
+        if (this.score > 1) {
+            for (let i = 0; i < this.obstacles.length; i++) {
+                let obstacle = this.obstacles[i];
 
-            obstacle.position.z -= (SPEED_Z * delta);
-            if (obstacle.position.z < 0) {
-                let x = Scalar.RandomRange(-TRACK_WIDTH / 2, TRACK_WIDTH / 2);
-                let z = Scalar.RandomRange(SPAWN_POS_Z - 15, SPAWN_POS_Z + 15);
-                obstacle.position.set(x, 0.5, z);
-            } 
-            else {
-                if (this.playerBox.intersectsMesh(obstacle, false)) {
-                    this.aie.play();
+                obstacle.position.z -= (SPEED_Z * delta);
+                if (obstacle.position.z < 0) {
+                    let x = Scalar.RandomRange(-TRACK_WIDTH / 2, TRACK_WIDTH / 2);
+                    let z = Scalar.RandomRange(SPAWN_POS_Z - 15, SPAWN_POS_Z + 15);
+                    obstacle.position.set(x, 0.5, z);
+                } else {
+                    if (this.playerBox.intersectsMesh(obstacle, false)) {
+                        this.aie.play();
+                        //window.location.reload();
+                    }
                 }
             }
         }
-
 
         for (let i = 0; i < this.tracks.length; i++) {
             let track = this.tracks[i];
@@ -235,7 +236,6 @@ class Game {
         for (let i = 0; i < NB_OBSTACLES; i++) {
             let obstacle = obstacleModele.clone("");
             obstacle.scaling = new Vector3(1, 1, 1);
-
             let x = Scalar.RandomRange(-TRACK_WIDTH / 2, TRACK_WIDTH / 2);
             let z = Scalar.RandomRange(SPAWN_POS_Z - 15, SPAWN_POS_Z + 15);
             obstacle.position.set(x, 0, z);
